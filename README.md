@@ -1,2 +1,1 @@
-# polynomial
-2nd semester lab
+# Методы программирования 4: Транслятор
