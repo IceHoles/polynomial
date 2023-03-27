@@ -11,7 +11,7 @@ class Translator {
 	enum lexemType { number, operation, bracket_open, bracket_close, word, begin };
 	Vector<std::pair<lexemType, std::string>> lexems;
 	Vector<std::pair<lexemType, std::string>> postfix;
-	std::map<std::string, int> priority = { {"+", 1}, {"-", 1}, {"*", 2}, {"/", 2}, {"sin", 3}, {"!", 4}, {"^", 4}, {"ln", 3}, {"tg", 3}, {"cos", 3} };
+	std::map<std::string, int> priority = { {"+", 1}, {"-", 1}, {"*", 2}, {"/", 2}, {"^", 4}};
 	std::map<std::string, double> variables = { {"pi", 3.14159265359}, {"Pi", 3.14159265359}, {"PI", 3.14159265359}, {"e", 2.71828182846} };
 
 	void Parse() {

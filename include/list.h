@@ -44,15 +44,15 @@ public:
 			return copy;
 		};
 
-		friend bool operator!=(const iterator& it1, const iterator& it2) {
-			if (it1.ptr != it2.ptr)
+		bool operator!=(const iterator& it2) {
+			if (ptr != it2.ptr)
 				return true;
 			else
 				return false;
 		};
 
-		friend bool operator==(const iterator& it1, const iterator& it2) {
-			return !(it1 != it2);
+		bool operator==(const iterator& it2) {
+			return !(this != it2);
 		};
 
 		T& operator*() {
@@ -62,6 +62,14 @@ public:
 		Node<T>* get_node() {
 			return this->ptr;
 		};
+	};
+
+	iterator begin() {
+		return first;
+	};
+
+	iterator end() {
+		return nullptr;
 	};
 
 	explicit List(size_t count) {
@@ -285,7 +293,7 @@ public:
 		}
 	}
 
-	List<T> merge_sorted_lists(List& list) {
+	List<T> merge_sorted_lists(const List& list) const {
 		List<T> l;
 		Node<T>* ptr1 = first;
 		Node<T>* ptr2 = list.first;
